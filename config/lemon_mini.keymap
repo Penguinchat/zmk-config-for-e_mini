@@ -14,10 +14,10 @@
 
         LAYER0 {
             bindings = <
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
 
             >;
             display-name = "LAYER 0";
@@ -25,10 +25,10 @@
 
         LAYER1 {
             bindings = <
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
 
             >;
             display-name = "LAYER 1";
@@ -36,10 +36,10 @@
 
         LAYER2 {
             bindings = <
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
-                trans	trans	trans	trans	trans	trans	trans	trans	trans	trans	trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
+                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
 
             >;
             display-name = "LAYER 2";
