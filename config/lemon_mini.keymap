@@ -7,41 +7,70 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
+    macros {
+        rgb_bri_macro: rgb_bri_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRI>;
+            label = "RGB_BRI_MACRO";
+        };
+
+        rgb_tog_macro: rgb_tog_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_TOG>;
+            label = "RGB_TOG_MACRO";
+        };
+    };
+
+    behaviors {
+        rgb_ht: rgb_ht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RGB_HT";
+            bindings = <&rgb_tog_macro>, <&rgb_bri_macro>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         LAYER0 {
             bindings = <
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-
+&kp TAB    &kp Q     &kp W     &kp E        &kp R      &kp T      &kp Y  &kp U       &kp I     &kp O     &kp P      &kp BSPC
+&kp CAPS   &kp A     &kp S     &kp D        &kp F      &kp G      &kp H  &kp J       &kp K     &kp L     &kp ENTER
+&kp LSHFT  &kp Z     &kp X     &kp C        &kp V      &kp B      &kp N  &kp M       &kp FSLH  &kp UP    &kp RSHFT
+&kp LCTRL  &kp LGUI  &kp LALT  &rgb_ht 0 0  &kp SPACE  &kp SPACE  &mo 1  &kp DELETE  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
+
             display-name = "LAYER 0";
         };
 
         LAYER1 {
             bindings = <
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-
+&kp F1      &kp F2      &kp F3  &kp F4           &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&kp ESC     &kp N1      &kp N2  &kp N3           &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9   &kp N0
+&trans      &trans      &trans  &trans           &trans  &trans  &trans  &trans  &trans  &trans   &trans
+&bt BT_CLR  &bt BT_NXT  &trans  &rgb_ug RGB_BRD  &trans  &trans  &trans  &trans  &trans  &trans   &trans
             >;
+
             display-name = "LAYER 1";
         };
 
         LAYER2 {
             bindings = <
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-                &trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans	&trans
-
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
+
             display-name = "LAYER 2";
         };
 
