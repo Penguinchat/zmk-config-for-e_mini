@@ -3,7 +3,7 @@ id: lemon_mini
 name: lemon_mini
 type: shield
 url: 
-requires: [e73_module]
+requires: [promicro]
 features:
   - keys
   - underglow
