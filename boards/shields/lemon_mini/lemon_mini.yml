@@ -1,6 +1,6 @@
 file_format: "1"
-id: e_mini
-name: e_mini
+id: lemon_mini
+name: lemon_mini
 type: shield
 url: 
 requires: [e73_module]
